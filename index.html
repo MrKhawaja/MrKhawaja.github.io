@@ -1,37 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrKhawaja - AlveeHawak</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <img src="logo.svg" class="logo" >
-    <h4>Give me a knock if you have any request</h4>
-    <nav>
-        <a href="https://github.com/MrKhawaja" >GitHub</a>
-        <a class="primary" href="https://discord.gg/UhKBHwD">Discord</a>
-    </nav>
-    <div class="footer">
-    <div class="skills">
-        <div class="badge bg-primary">Javascript</div>
-        <div class="badge bg-light text-dark">Node</div>
-        <div class="badge bg-light text-dark">React</div>
-        <div class="badge bg-light text-dark">React-Native</div>
-        <div class="badge bg-light text-dark">Discord.js</div>
-    </div>
-    <div class="skills">
-        <div class="badge bg-primary">Java</div>
-        <div class="badge bg-light text-dark">Spigot Plugin</div>
-        <div class="badge bg-light text-dark">Bungeecord Plugin</div>
-    </div>
-        <h5>MrKhawaja/AlveeHawak</h5>
-        <h6>live to learn</h6>
-</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MrKhawaja - AlveeHawak</title>
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+
+
+            <div class="section">
+                <img src="logo.svg" class="logo">
+                <h4>Give me a knock if you have any request</h4>
+                <nav>
+                    <a class="link" href="https://github.com/MrKhawaja">GitHub</a>
+                    <a class="link primary" href="https://discord.gg/UhKBHwD">Discord</a>
+                </nav>
+                <div class="footer">
+                    <div class="skills">
+                        <div class="badge bg-primary">Javascript</div>
+                        <div class="badge bg-white">Node</div>
+                        <div class="badge bg-white">React</div>
+                        <div class="badge bg-white">React-Native</div>
+                        <div class="badge bg-white">Discord.js</div>
+                    </div>
+                    <div class="skills">
+                        <div class="badge bg-primary">Java</div>
+                        <div class="badge bg-white">Spigot Plugin</div>
+                        <div class="badge bg-white">Bungeecord Plugin</div>
+                    </div>
+                    <a href="#webs" style="margin-top: 5rem; font-size: 1.7rem;">&#9660;</a>
+                </div>
+            </div>
+            <div class="section webs">
+                <a id="webs"></a>
+                <div class="row">
+                    <a id="card1" href="https://hosting.alveehawak.xyz" class="card">
+                        <div class="bg-image" style="background-image: url(hosting.png);"></div>
+
+                        <h3 class="title">
+                            Pixeledge Hosting
+                        </h3>
+                    </a>
+                    <a id="card2" href="https://RepulsionBD.com" class="card">
+                        <div class="bg-image" style="background-image: url(repulsionbd.png);"></div>
+
+                        <h3 class="title">
+                            RepulsionBD
+                        </h3>
+                    </a>
+
+
+                </div>
+                <div class="row">
+                    <a id="card3" href="https://RibbonsAndSashes.com" class="card">
+                        <div class="bg-image" style="background-image: url(ribbons.png);"></div>
+
+                        <h3 class="title">
+                            RibbonsAndSashes
+                        </h3>
+                    </a>
+                    <a id="card4" href="https://DrToothCali.com" class="card">
+                        <div class="bg-image" style="background-image: url(drtoothcali.png);"></div>
+
+                        <h3 class="title">
+                            DrToothCali
+                        </h3>
+                    </a>
+
+
+                </div>
+                <div class="footer">
+                    <h5>MrKhawaja/AlveeHawak</h5>
+                    <h6 style="margin-bottom: 1rem;">live to learn</h6>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('a[href*="#"]')
+                    // Remove links that don't actually link to anything
+                    .not('[href="#"]')
+                    .not('[href="#0"]')
+                    .click(function (event) {
+                        // On-page links
+                        if (
+                            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                            &&
+                            location.hostname == this.hostname
+                        ) {
+                            // Figure out element to scroll to
+                            var target = $(this.hash);
+                            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                            // Does a scroll target exist?
+                            if (target.length) {
+                                // Only prevent default if animation is actually gonna happen
+                                event.preventDefault();
+                                $('html, body').animate({
+                                    scrollTop: target.offset().top
+                                }, 1000, function () {
+                                    // Callback after animation
+                                    // Must change focus!
+                                    var $target = $(target);
+                                    $target.focus();
+                                    if ($target.is(":focus")) { // Checking if the target was focused
+                                        return false;
+                                    } else {
+                                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                                        $target.focus(); // Set focus again
+                                    };
+                                });
+                            }
+                        }
+                    });
+                $('.card').hover(function (event) {
+                    $(this).find(".bg-image").addClass("hover");
+                    $(this).find(".title").addClass("hover");
+                }, function () {
+                    // on mouseout, reset the background colour
+                    $(this).find(".bg-image").removeClass("hover");
+                    $(this).find(".title").removeClass("hover");
+                });
+            });
+        </script>
+
+    </body>
+
 </html>
